@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Về chúng tôi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="CSS/Style.css">
+<link rel="stylesheet" type="text/css" href="CSS/DropdownMenu.css">
+<link rel="stylesheet" type="text/css" href="CSS/Responsive.css">
+<link rel="stylesheet" type="text/css" href="CSS/SlideShow.css">
+<script src="JS/menu.js"></script> 
+</head>
+
+<body>
+	<header><img src="Images/banner.gif" alt="header"></header>
+	<div class="menu-wrap">
+    	<nav class="menu">
+        	<ul class="clearfix" id = "navigation">
+            	<li><a href="index.html">Trang chủ</a></li>
+                <li>
+                	<a href="products.html">Sản phẩm <span class="arrow">&#9660;</span></a>
+                    <ul class="sub-menu">
+                    	<li><a href="#">Tàu thuyền</a></li>
+                        <li><a href="#">Nhân vật</a></li>
+                        <li><a href="#">Khác</a></li>
+                    </ul>
+                </li>
+                <li><a href="News.html">Tin tức</a></li>
+                <li><a href="Contact.html">Liên hệ</a></li>
+                <li class="current-item"><a href="About.html">Về chúng tôi</a></li>
+                <li class="icon"><a href="#" onclick="showMenu()">&equiv;</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="row">
+    <article class="col-8 col-m-12">
+    	<div class="col-12 articleColor">
+        	<h2>Về chúng tôi</h2>
+            
+            <div class="slideshow-container">
+            	<div class="slide fade">
+                	<img src="Images/slide01.jpg" style="width:100%">
+                    <div class="text">Chibi Chihuahua</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide02.jpg" style="width:100%">
+                    <div class="text">Cute Huskey Dog</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide03.jpg" style="width:100%">
+                    <div class="text">Nissan Fairlady Z Nismo</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide04.jpg" style="width:100%">
+                    <div class="text">Dinosaur: Allosaurus</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide05.jpg" style="width:100%">
+                    <div class="text">Yukikaze – Nhật Bản</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide06.jpg" style="width:100%">
+                    <div class="text">HMV USS Ticonderoga</div>
+                </div>
+                <div class="slide fade">
+                	<img src="Images/slide07.jpg" style="width:100%">
+                    <div class="text">Dragunov Sniper Rifle</div>
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br/>
+            
+            <div style="text-align:center;">
+            	<span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
+            <br/>
+            
+            <script src="JS/SlideShow.js"></script>
+            
+        	<p class="articleContent">Trang web ShopMoHinhGiay.com là trang web bán hàng online, chuyên cung cấp các sản phẩm mô hình giấy thủ công chất lượng, đa dạng đáp ứng nhu cầu của mọi khách hàng, khách hàng có thể thoải mái lựa chọn các dòng sản phẩm của chúng tôi. Một mô hình giấy đẹp và tinh tế sẽ là một món đồ trang trí hoàn hảo cho ngăn tủ lớn trong nhà bạn. </p><br/>
+            <p class="articleContent">Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ <b>shopmohinhgiay@gmail.com</b> để nhận được sự chăm sóc tận tình của chúng tôi.</p><br/>
+            <p class="articleContent">Chúng tôi luôn có sản phẩm mới và hãy ghé thăm thường xuyên để không bỏ lỡ những sản phẩm yêu thích nhất của bạn.</p>
+        </div>
+       
+    </article>
+    
+    <aside class="col-4 col-m-12">
+    	<div class="heading">
+        	<p>Địa chỉ Shop Mô Hình Giấy</p>
+        </div>
+        <div id="googleMap1" style="width: 90%; height: 300px; margin: 10px auto;"></div>
+        <div class="heading">
+        	<p>Địa chỉ Hiện tại của bạn</p>
+        </div>
+        <div id="googleMap2" style="width: 90%; height: 300px; margin: 10px auto;"></div>
+        <script>
+			var latitude = 0;
+			var longitude = 0;
+			function setPosition(position) {
+				latitude = position.coords.latitude;
+				longitude = position.coords.longitude; 
+				myMap2();
+			}
+			function getLocation() { 
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(setPosition);
+				} else {
+					// browser not support geolocation
+				} 
+			}
+			function myMap() { 
+				var myCenter1 = new google.maps.LatLng(10.8538976,106.6247209);
+  				var mapCanvas1 = document.getElementById("googleMap1");
+  				var mapOptions1 = {center: myCenter1, zoom: 14};
+  				var map1 = new google.maps.Map(mapCanvas1, mapOptions1);
+  				var marker1 = new google.maps.Marker({
+					position:myCenter1,
+					animation: google.maps.Animation.BOUNCE
+				});
+  				marker1.setMap(map1);
+			}
+			getLocation();
+			function myMap2() {
+				var myCenter2 = new google.maps.LatLng(latitude,longitude); 
+				var mapCanvas2 = document.getElementById("googleMap2");
+				var mapOptions2 = {center: myCenter2, zoom: 14};
+				var map2 = new google.maps.Map(mapCanvas2, mapOptions2);
+				var marker2 = new google.maps.Marker({
+					position:myCenter2,
+					animation: google.maps.Animation.BOUNCE
+				});
+  				marker2.setMap(map2);
+			}
+		</script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeo79qGvwKUkpdxMz9KMj42GW1A_HFJ-I&callback=myMap"></script>	
+    </aside>
+    </div>
+    
+    <footer class="col-12">
+    <div class="list col-3 col-m-4">
+    	<ul>
+        	<li>Câu hỏi thường gặp</li>
+            <li>Chính sách đổi trả</li>
+            <li>Giao hàng & thanh toán</li>
+            <li>Hướng dẫn mua online</li>
+        </ul>
+    </div>
+    <div class="list col-3 col-m-4">
+    	<ul>
+        	<li>Giới thiệu cửa hàng</li>
+            <li>Tuyển dụng</li>
+            <li>Góp ý, khiếu nại</li>
+        </ul>
+    </div>
+    <div class="list col-3 col-m-4">
+    	<ul>
+        	<li>Gọi mua hàng <b>1800.0001</b></li>
+            <li>Gọi mua hàng <b>1800.0002</b></li>
+            <li>Gọi mua hàng <b>1800.0003</b></li>
+        </ul>
+    </div>
+    <div class="list col-3 col-m-12">
+    	<img src="Images/SocialMediaIcons.png" width="250"/>
+    </div>
+    <div class="bottom">
+    	<p>&copy;Copyright 2017 - ShopMoHinhGiay.com	- Xem chính sách sử dụng trang web</p>
+    </footer>
+
+</body>
+</html>

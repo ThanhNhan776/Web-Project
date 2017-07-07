@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+.clearfix::after {
+	display: block;
+	clear: both;
+} /* check ============== */
+.menu-wrap {
+	width: 100%;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+	background: #0CC;  
+	display: inline-block;
+	margin: 5px 0px;
+	/*font-size: 18px;*/
+}
+
+.menu {
+	width: 100%;
+	margin: 0px auto; 
+}
+.menu ul {
+	margin: 0;
+}
+.menu li {
+	margin: 0px;
+	list-style: none;
+}
+.menu a {
+	trasition: all linear 0.15s;
+	text-decoration: none;
+	color: #039;
+}
+.menu li:hover > a, .menu .current-item > a {
+	color: #FFF;
+}
+.menu .arrow {
+	font-size: 12px;
+	line-height: 0%;
+}
+
+.menu > ul > li {
+	float: left;
+	display: inline-block;
+	position: relative;
+	font-size: 19px;
+}
+.menu > ul > li > a {
+	padding: 10px 30px;
+	display: inline-block; 
+}
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+	background: #03C;
+}
+
+.sub-menu {
+	width: 130%;
+	padding: 5px 0px;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity linear 0.15s;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+	background-color: #09F;
+}
+.menu li:hover .sub-menu {
+	z-index: 1;
+	opacity: 1;
+}
+.sub-menu li {
+	display: block;
+	font-size: 16px; background: #0CC;
+}
+.sub-menu li a {
+	padding: 10px 30px;
+	display: block;
+}
+.sub-menu li a:hover, .sub-menu .current-item a {
+	background: #03C;
+}
+.clearfix .icon {
+	display: none;
+}
